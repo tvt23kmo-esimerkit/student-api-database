@@ -5,7 +5,7 @@ Muokataan edellistä esimerkkiä niin, että data haetaan tietokannasta.
 Luodaan tietokanta
 <pre>
 create database studentdb;
-use student db;
+use studentdb;
 create table student(
     id_student int primary key,
     firstname varchar(45),
