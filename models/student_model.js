@@ -1,15 +1,11 @@
-const studentData=[
-    {id_student:1, firstname:'Teppo', lastname:'Testi'},
-    {id_student:2, firstname:'Liisa', lastname:'Virta'},
-    {id_student:3, firstname:'Aino', lastname:'Meri'}
-];
+const db = require('../database');
 
 const student={
-    getAllStudents: function(){
-        return studentData;
+    getAllStudents: function(callback){
+        return db.query("SELECT * FROM student",callback);
     },
-    getOneStudent: function(id){
-        return studentData[id-1];
+    getOneStudent: function(id,callback){
+        return db.query("SELECT * FROM student where id_student=?",[id],callback);
     },
     addStudent: function(newData){
        // return "Lisätään uusi opiskelija (insert into ...)";
