@@ -1,0 +1,15 @@
+{
+  "name": "student-api_static",
+  "version": "1.0.0",
+  "description": "REST API esimerkki, jonka tarkoituksena on havainnollistaa **MVC-mallia** ja APIn tekemistä Node.js:n avulla käyttäen **Express.js** frameworkkiä.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
