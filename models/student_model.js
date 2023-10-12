@@ -7,10 +7,9 @@ const student={
     getOneStudent: function(id,callback){
         return db.query("SELECT * FROM student where id_student=?",[id],callback);
     },
-    addStudent: function(newData){
-       // return "Lisätään uusi opiskelija (insert into ...)";
-       let sql="insert into student values("+newData.id_student+","+newData.firstname+");";
-        return sql;
+    addStudent: function(newData,callback){
+        return db.query("INSERT INTO student values(?,?,?)",
+        [newData.id_student, newData.firstname, newData.lastname],callback);
     },
     updateStudent: function(id){
         return "Päivitetään opiskelija, jonka id="+id;
