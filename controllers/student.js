@@ -26,9 +26,15 @@ router.get('/:id',function(request,response){
 });
 
 router.post('/',function(request,response){
-    let data=student.addStudent(request.body);
     console.log(request.body);
-    response.json(data);
+    student.addStudent(request.body,function(err, data){
+        if(err){
+            response.json(err);
+        }
+        else{
+            response.send(data);
+        }
+    });
 });
 
 router.put('/:id',function(request,response){
