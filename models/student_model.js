@@ -11,11 +11,13 @@ const student={
         return db.query("INSERT INTO student values(?,?,?)",
         [newData.id_student, newData.firstname, newData.lastname],callback);
     },
-    updateStudent: function(id){
-        return "Päivitetään opiskelija, jonka id="+id;
+    updateStudent: function(id, updateData,callback){
+        return db.query("UPDATE student set firstname=?, lastname=? WHERE id_student=?",
+        [updateData.firstname, updateData.lastname, id], callback);
     },
-    deleteStudent: function(id){
-        return "Poistetaan opiskelija, jonka id="+id;
+    deleteStudent: function(id,callback){
+        return db.query("DELETE FROM student WHERE id_student=?",
+        [id],callback);
     }
 };
 module.exports=student;
