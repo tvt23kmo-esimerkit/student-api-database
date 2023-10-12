@@ -17,3 +17,15 @@ insert into student values(2,'Liisa','Joki');
 create user studentAdmin@'localhost' identified by 'studentPass';
 grant all on studentdb.* to studentAdmin@'localhost';
 </pre>
+
+## Login systeemi
+
+Luodaan ensin user-taulu koodilla
+<pre>
+CREATE TABLE user(
+  id_user INT primary key auto_increment,
+  username VARCHAR(20),
+  password VARCHAR(255),
+  UNIQUE (username)
+);
+</pre>
